@@ -45,6 +45,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         title: 'hello',
         home: Scaffold(
+          backgroundColor: Color.fromRGBO(0, 217, 255, 1),
           appBar: AppBar(
             title: Text('Lottery app'),
           ),
@@ -52,11 +53,18 @@ class _MyAppState extends State<MyApp> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text(
+                  "LUCKY NUMBER",
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
+                ),
+                Padding(padding: const EdgeInsets.only(bottom: 20)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
+                        padding: const EdgeInsets.only(bottom: 0),
                         child: Container(
                           margin: const EdgeInsets.all(3.0),
                           padding: const EdgeInsets.all(10.0),
@@ -68,7 +76,7 @@ class _MyAppState extends State<MyApp> {
                           ),
                         )),
                     Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
+                        padding: const EdgeInsets.only(bottom: 0),
                         child: Container(
                           margin: const EdgeInsets.all(3.0),
                           padding: const EdgeInsets.all(10.0),
@@ -80,7 +88,7 @@ class _MyAppState extends State<MyApp> {
                           ),
                         )),
                     Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
+                        padding: const EdgeInsets.only(bottom: 0),
                         child: Container(
                           margin: const EdgeInsets.all(3.0),
                           padding: const EdgeInsets.all(10.0),
@@ -92,7 +100,7 @@ class _MyAppState extends State<MyApp> {
                           ),
                         )),
                     Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
+                        padding: const EdgeInsets.only(bottom: 0),
                         child: Container(
                           margin: const EdgeInsets.all(3.0),
                           padding: const EdgeInsets.all(10.0),
@@ -104,7 +112,7 @@ class _MyAppState extends State<MyApp> {
                           ),
                         )),
                     Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
+                        padding: const EdgeInsets.only(bottom: 0),
                         child: Container(
                           margin: const EdgeInsets.all(3.0),
                           padding: const EdgeInsets.all(10.0),
@@ -116,7 +124,7 @@ class _MyAppState extends State<MyApp> {
                           ),
                         )),
                     Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
+                        padding: const EdgeInsets.only(bottom: 0),
                         child: Container(
                           margin: const EdgeInsets.all(3.0),
                           padding: const EdgeInsets.all(10.0),
@@ -132,7 +140,11 @@ class _MyAppState extends State<MyApp> {
                 Padding(
                   padding: const EdgeInsets.only(top: 30),
                   child: ElevatedButton(
-                      onPressed: btntaped, child: Text('tap for lucky number')),
+                      onPressed: btntaped,
+                      child: Text('tap for lucky number'),
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.orangeAccent,
+                          onPrimary: Colors.white)),
                 )
               ],
             ),
@@ -142,7 +154,7 @@ class _MyAppState extends State<MyApp> {
 
   BoxDecoration myBoxDecoration() {
     return BoxDecoration(
-      border: Border.all(width: 3.0, color: Colors.red),
+      border: Border.all(width: 4.0, color: Colors.red),
       borderRadius: BorderRadius.all(
           Radius.circular(30) //                 <--- border radius here
           ),
