@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -14,6 +15,42 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var text = ['00', '00', '00', '00', '00', '00'];
+  void delay() {
+    Timer(Duration(seconds: 0), () {
+      btntaped();
+      Timer(Duration(milliseconds: 200), () {
+        btntaped();
+        Timer(Duration(milliseconds: 200), () {
+          btntaped();
+          Timer(Duration(milliseconds: 200), () {
+            btntaped();
+            Timer(Duration(milliseconds: 200), () {
+              btntaped();
+              Timer(Duration(milliseconds: 200), () {
+                btntaped();
+                Timer(Duration(milliseconds: 200), () {
+                  btntaped();
+                  Timer(Duration(milliseconds: 200), () {
+                    btntaped();
+                    Timer(Duration(milliseconds: 200), () {
+                      btntaped();
+                      Timer(Duration(milliseconds: 200), () {
+                        btntaped();
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  }
+
+  void ani() {
+    delay();
+  }
 
   void btntaped() {
     var random = Random();
@@ -40,14 +77,27 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  bool _light = true;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'hello',
+        theme: _light
+            ? ThemeData(brightness: Brightness.dark)
+            : ThemeData(brightness: Brightness.light),
         home: Scaffold(
-          backgroundColor: Color.fromRGBO(0, 217, 255, 1),
           appBar: AppBar(
             title: Text('Lottery app'),
+            actions: [
+              Switch(
+                  value: _light,
+                  onChanged: (state) {
+                    setState(() {
+                      _light = state;
+                    });
+                  }),
+            ],
           ),
           body: Center(
             child: Column(
@@ -140,7 +190,7 @@ class _MyAppState extends State<MyApp> {
                 Padding(
                   padding: const EdgeInsets.only(top: 30),
                   child: ElevatedButton(
-                      onPressed: btntaped,
+                      onPressed: ani,
                       child: Text('tap for lucky number'),
                       style: ElevatedButton.styleFrom(
                           primary: Colors.orangeAccent,
